@@ -1,0 +1,25 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+# HMAC secret for JWT validation (local dev only)
+jwt:
+  secret: ${JWT_SECRET:thisisaverylongsecretkeyforjwtgeneration123456original}
+
+cors:
+  allowed-origins: http://localhost:5173
