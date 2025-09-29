@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+eureka:
+  server:
+    enableSelfPreservation: false   # relaxed mode for dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'    # expose all actuator endpoints in dev
+  endpoint:
+    health:
+      show-details: always   # always show health details in dev
