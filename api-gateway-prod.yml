@@ -1,0 +1,26 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+      roles: ACTUATOR_ADMIN
+
+# RSA public key for JWT validation
+jwt:
+  public-key: classpath:keys/public.pem
+
+cors:
+  allowed-origins: https://myapp.com
