@@ -1,0 +1,18 @@
+spring:
+  config.activate.on-profile: prod
+
+  datasource:
+    url: jdbc:oracle:thin:@//oracle-db:1521/XEPDB1
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASS}
+
+jwt:
+  public-key: ${JWT_PUBLIC_KEY:classpath:keys/public.pem}
+
+cors.allowed-origins: "*"
